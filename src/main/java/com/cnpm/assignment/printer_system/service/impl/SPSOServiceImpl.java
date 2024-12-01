@@ -256,7 +256,7 @@ public class SPSOServiceImpl implements SPSOService {
         // TODO
         Printer printer = printerRepository.findById(idPrinter).orElseThrow(() -> new CNPMNotFoundException("Máy in không tồn tại...!"));
         printer.setLastMaintenanceDate(request.getLastMaintenanceDate());
-        printer.getPagePrinters().getFirst().setPageQuantity(request.getPageQuantity());
+        printer.getPagePrinters().getFirst().setPageQuantity(request.getPageQuantity() - printer.getPagePrinters().getLast().getPageQuantity());
         printer.setPrinterStatusSPSO(request.getStatus());
         printerRepository.save(printer);
     }
