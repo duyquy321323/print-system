@@ -10,7 +10,7 @@ public class ConnectConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
         registry.addMapping("/**") // Áp dụng cho tất cả các endpoint
-                .allowedOrigins("https://duyquy321323.github.io") // Chỉ định domain được phép truy cập
+                .allowedOrigins("https://duyquy321323.github.io", "http://localhost:3000") // Chỉ định domain được phép truy cập
                                                          // (thay bằng domain của
                 // bạn)
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Chỉ định các phương thức được phép
